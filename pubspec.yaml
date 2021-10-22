@@ -1,6 +1,6 @@
 name: modal_stack_router
 description: A Flutter library for creating modal flows and wizards commonly used on large screen devices like desktop web.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/danReynolds/modal_stack_router
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   modal_bottom_sheet: ^2.0.0
-  stack_router: ^1.0.1
+  stack_router: ^1.0.3
 
 dev_dependencies:
   flutter_test:
