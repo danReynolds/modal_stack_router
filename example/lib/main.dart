@@ -20,18 +20,17 @@ class ExampleStackRouter extends StatelessWidget {
           StackRoute(
             route: ExampleStackRoutes.firstRoute,
             child: StackRouterScaffold(
-              height: 400,
-              width: 600,
-              child: Expanded(
-                child: Center(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      router.pushRoute(ExampleStackRoutes.secondRoute);
-                    },
-                    child: const Text(
-                      "Go to second route",
-                      style: TextStyle(color: Colors.white),
-                    ),
+              height: 500,
+              width: 500,
+              alignment: Alignment.center,
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    router.pushRoute(ExampleStackRoutes.secondRoute);
+                  },
+                  child: const Text(
+                    "Go to second route",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -40,47 +39,24 @@ class ExampleStackRouter extends StatelessWidget {
           StackRoute(
             route: ExampleStackRoutes.secondRoute,
             child: StackRouterScaffold(
-              height: 450,
-              width: 600,
-              appBar: const StackRouterAppBar(
-                title: Text("I'm a Title", style: TextStyle(fontSize: 20)),
+              height: 400,
+              width: 400,
+              appBar: StackRouterAppBar(
+                title: Text(
+                  "Title",
+                  style: Theme.of(context).textTheme.headline1!.copyWith(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                trailing: TextButton(
+                  child: Text("Trailing action"),
+                  onPressed: () {},
+                ),
               ),
               child: Expanded(
-                child: Container(
-                  color: Colors.blue,
-                  alignment: Alignment.center,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "I'm the second route",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      const Padding(padding: EdgeInsets.only(top: 16)),
-                      ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                        ),
-                        onPressed: () {
-                          router.showSnackBar(
-                            snackBar: const StackRouterSnackBar(
-                              title: Text(
-                                "I'm a snackbar!",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          "Show snack bar",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ),
-                    ],
-                  ),
+                child: Center(
+                  child: Text("I'm the second route!"),
                 ),
               ),
             ),
