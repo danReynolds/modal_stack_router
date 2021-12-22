@@ -2,7 +2,6 @@ library modal_stack_router;
 
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:stack_router/stack_router.dart';
 
 export 'package:stack_router/stack_router.dart';
 
@@ -24,6 +23,9 @@ Future<T?> showModalStackRouter<T>({
 
   /// The border radius of the modal.
   BorderRadiusGeometry? borderRadius,
+
+  /// The route settings for the modal.
+  RouteSettings? settings,
 }) {
   return showCustomModalBottomSheet<T>(
     barrierColor: barrierColor,
@@ -31,6 +33,7 @@ Future<T?> showModalStackRouter<T>({
     builder: (context) => child,
     duration: Duration.zero,
     enableDrag: false,
+    settings: settings,
     containerWidget: (_, animation, child) {
       return Container(
         alignment: Alignment.topCenter,
